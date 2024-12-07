@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/redefine-og.webp">
 <meta property="article:published_time" content="2024-12-06T16:18:29.233Z">
-<meta property="article:modified_time" content="2024-12-06T16:29:42.617Z">
+<meta property="article:modified_time" content="2024-12-07T02:12:58.155Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/redefine-og.webp">
@@ -344,8 +344,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-12-07 00:29:42</span>
-            <span class="mobile">2024-12-07 00:29:42</span>
+            <span class="desktop">2024-12-07 10:12:58</span>
+            <span class="mobile">2024-12-07 10:12:58</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -356,12 +356,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>393 Words</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>2.7k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>1 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>11 Mins</span>
         </span>
     
     
@@ -380,54 +380,284 @@
 
 
 		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-			<p>1：配置网络</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/netplan</span><br><span class="line">ls -l</span><br><span class="line">sudo nano 50-cloud-init.yaml</span><br></pre></td></tr></table></figure></div>
+			<h5 id="1：配置网络"><a href="#1：配置网络" class="headerlink" title="1：配置网络"></a>1：配置网络</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/netplan</span><br><span class="line">ls -l</span><br><span class="line">sudo nano 50-cloud-init.yaml</span><br></pre></td></tr></table></figure></div>
 
 
 
 <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">network:</span><br><span class="line">  version: 2</span><br><span class="line">  ethernets:</span><br><span class="line">    ens33:  # 请根据实际接口名称修改</span><br><span class="line">      dhcp4: no</span><br><span class="line">      addresses: [192.168.50.19/24]  # 请根据实际IP地址修改</span><br><span class="line">      gateway4: 192.168.50.1  # 请根据实际网关地址修改</span><br><span class="line">      nameservers:</span><br><span class="line">        addresses: [192.168.50.1,114.114.114.114]  # 请根据实际DNS地址修改</span><br></pre></td></tr></table></figure></div>
 
-<p>重启应用</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo netplan apply</span><br></pre></td></tr></table></figure></div>
+<h5 id="重启应用"><a href="#重启应用" class="headerlink" title="重启应用"></a>重启应用</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo netplan apply</span><br></pre></td></tr></table></figure></div>
 
-<p>2：修改&#x2F;etc&#x2F;systemd&#x2F;resolved.conf</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DNS=8.8.8.8 114.114.114.114</span><br></pre></td></tr></table></figure></div>
+<h5 id="2：修改-etc-systemd-resolved-conf"><a href="#2：修改-etc-systemd-resolved-conf" class="headerlink" title="2：修改&#x2F;etc&#x2F;systemd&#x2F;resolved.conf"></a>2：修改&#x2F;etc&#x2F;systemd&#x2F;resolved.conf</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DNS=8.8.8.8 114.114.114.114</span><br></pre></td></tr></table></figure></div>
 
-<p>重启应用</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart systemd-resolved</span><br><span class="line">sudo systemctl enable systemd-resolved</span><br></pre></td></tr></table></figure></div>
+<h5 id="重启应用-1"><a href="#重启应用-1" class="headerlink" title="重启应用"></a>重启应用</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart systemd-resolved</span><br><span class="line">sudo systemctl enable systemd-resolved</span><br></pre></td></tr></table></figure></div>
 
-<p>3：更换阿里源，打开配置文件</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/apt/sources.list.d/ubuntu.sources</span><br></pre></td></tr></table></figure></div>
+<h5 id="3：更换阿里源，打开配置文件"><a href="#3：更换阿里源，打开配置文件" class="headerlink" title="3：更换阿里源，打开配置文件"></a>3：更换阿里源，打开配置文件</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/apt/sources.list.d/ubuntu.sources</span><br></pre></td></tr></table></figure></div>
 
-<p>粘贴以下配置，并保存退出</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Types: deb</span><br><span class="line">URIs: http://mirrors.aliyun.com/ubuntu/</span><br><span class="line">Suites: noble noble-updates noble-security</span><br><span class="line">Components: main restricted universe multiverse</span><br><span class="line">Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg</span><br></pre></td></tr></table></figure></div>
+<h5 id="粘贴以下配置，并保存退出"><a href="#粘贴以下配置，并保存退出" class="headerlink" title="粘贴以下配置，并保存退出"></a>粘贴以下配置，并保存退出</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Types: deb</span><br><span class="line">URIs: http://mirrors.aliyun.com/ubuntu/</span><br><span class="line">Suites: noble noble-updates noble-security</span><br><span class="line">Components: main restricted universe multiverse</span><br><span class="line">Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg</span><br></pre></td></tr></table></figure></div>
 
-<p>4：更新源列表</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure></div>
+<h5 id="4：更新源列表"><a href="#4：更新源列表" class="headerlink" title="4：更新源列表"></a>4：更新源列表</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure></div>
 
-<p>更新系统软件包</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure></div>
+<h5 id="更新系统软件包"><a href="#更新系统软件包" class="headerlink" title="更新系统软件包"></a>更新系统软件包</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure></div>
 
-<p>5：安装必要的依赖包，这些包允许APT通过HTTPS使用仓库：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common</span><br></pre></td></tr></table></figure></div>
+<h5 id="5：安装必要的依赖包，这些包允许APT通过HTTPS使用仓库："><a href="#5：安装必要的依赖包，这些包允许APT通过HTTPS使用仓库：" class="headerlink" title="5：安装必要的依赖包，这些包允许APT通过HTTPS使用仓库："></a>5：安装必要的依赖包，这些包允许APT通过HTTPS使用仓库：</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common</span><br></pre></td></tr></table></figure></div>
 
-<p>导入Docker的官方GPG密钥以确保下载的包的真实性：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</span><br></pre></td></tr></table></figure></div>
+<h5 id="导入Docker的官方GPG密钥以确保下载的包的真实性："><a href="#导入Docker的官方GPG密钥以确保下载的包的真实性：" class="headerlink" title="导入Docker的官方GPG密钥以确保下载的包的真实性："></a>导入Docker的官方GPG密钥以确保下载的包的真实性：</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</span><br></pre></td></tr></table></figure></div>
 
-<p>添加Docker的官方APT仓库到系统中：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository &quot;deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&quot;</span><br></pre></td></tr></table></figure></div>
+<h5 id="添加Docker的官方APT仓库到系统中："><a href="#添加Docker的官方APT仓库到系统中：" class="headerlink" title="添加Docker的官方APT仓库到系统中："></a>添加Docker的官方APT仓库到系统中：</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository &quot;deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&quot;</span><br></pre></td></tr></table></figure></div>
 
-<p>更新APT包索引以确保APT使用新添加的仓库：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure></div>
+<h5 id="更新APT包索引以确保APT使用新添加的仓库："><a href="#更新APT包索引以确保APT使用新添加的仓库：" class="headerlink" title="更新APT包索引以确保APT使用新添加的仓库："></a>更新APT包索引以确保APT使用新添加的仓库：</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure></div>
 
-<p>安装Docker CE：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure></div>
+<h5 id="安装Docker-CE："><a href="#安装Docker-CE：" class="headerlink" title="安装Docker CE："></a>安装Docker CE：</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure></div>
 
-<p>验证Docker是否安装成功并运行：</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl status docker</span><br></pre></td></tr></table></figure></div>
+<h5 id="验证Docker是否安装成功并运行："><a href="#验证Docker是否安装成功并运行：" class="headerlink" title="验证Docker是否安装成功并运行："></a>验证Docker是否安装成功并运行：</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl status docker</span><br></pre></td></tr></table></figure></div>
 
-<p>安装onlyoffice  端口为80 不使用jwt ，如需使用，替换成 JWT_SECRET&#x3D;my_jwt_secret onlyoffice&#x2F;documentserver</p>
-<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run -i -t -d -p 80:80 --restart=always -e JWT_ENABLED=false onlyoffice/documentserver</span><br></pre></td></tr></table></figure></div>
+<h5 id="更换docker镜像源"><a href="#更换docker镜像源" class="headerlink" title="更换docker镜像源"></a>更换docker镜像源</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/docker/daemon.json</span><br></pre></td></tr></table></figure></div>
+
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;registry-mirrors&quot;: [</span><br><span class="line">        &quot;https://docker.1panel.live&quot;,</span><br><span class="line">        &quot;https://hub.rat.dev&quot;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="重启docker"><a href="#重启docker" class="headerlink" title="重启docker"></a>重启docker</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="查看是否应用"><a href="#查看是否应用" class="headerlink" title="查看是否应用"></a>查看是否应用</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker info</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="安装onlyoffice-端口为666-不使用jwt-，如需使用，替换成-JWT-SECRET-my-jwt-secret"><a href="#安装onlyoffice-端口为666-不使用jwt-，如需使用，替换成-JWT-SECRET-my-jwt-secret" class="headerlink" title="安装onlyoffice  端口为666 不使用jwt ，如需使用，替换成 JWT_SECRET&#x3D;my_jwt_secret"></a>安装onlyoffice  端口为666 不使用jwt ，如需使用，替换成 JWT_SECRET&#x3D;my_jwt_secret</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run -i -t -d -p 666:80 --restart=always -e JWT_ENABLED=false onlyoffice/documentserver</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="要访问位于容器外部的数据，您需要挂载卷"><a href="#要访问位于容器外部的数据，您需要挂载卷" class="headerlink" title="要访问位于容器外部的数据，您需要挂载卷"></a>要访问位于容器外部的数据，您需要挂载卷</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run -i -t -d -p 666:80 --restart=always \-v /app/onlyoffice/DocumentServer/logs:/var/log/onlyoffice  \-v /app/onlyoffice/DocumentServer/data:/var/www/onlyoffice/Data  \-v /app/onlyoffice/DocumentServer/lib:/var/lib/onlyoffice \-v /app/onlyoffice/DocumentServer/db:/var/lib/postgresql -e JWT_SECRET=my_jwt_secret onlyoffice/documentserver</span><br></pre></td></tr></table></figure></div>
+
+<h6 id="请确保每行末尾的反斜杠后面没有空格或其他字符。复制并粘贴上面的命令到你的终端中执行，这应该能解决-“invalid-reference-format”-的问题"><a href="#请确保每行末尾的反斜杠后面没有空格或其他字符。复制并粘贴上面的命令到你的终端中执行，这应该能解决-“invalid-reference-format”-的问题" class="headerlink" title="请确保每行末尾的反斜杠后面没有空格或其他字符。复制并粘贴上面的命令到你的终端中执行，这应该能解决 “invalid reference format” 的问题"></a>请确保每行末尾的反斜杠后面没有空格或其他字符。复制并粘贴上面的命令到你的终端中执行，这应该能解决 “invalid reference format” 的问题</h6><p>然后打开浏览器，访问<a class="link"   target="_blank" rel="noopener" href="http://ip:666/" >http://ip:666<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> 就可以进入了</p>
+<h4 id="docker的命令"><a href="#docker的命令" class="headerlink" title="docker的命令"></a>docker的命令</h4><h5 id="启动docker"><a href="#启动docker" class="headerlink" title="启动docker"></a>启动docker</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start docker</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="关闭docker"><a href="#关闭docker" class="headerlink" title="关闭docker"></a>关闭docker</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop docker</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="重启docker-1"><a href="#重启docker-1" class="headerlink" title="重启docker"></a>重启docker</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="docker设置随服务启动而自启动"><a href="#docker设置随服务启动而自启动" class="headerlink" title="docker设置随服务启动而自启动"></a>docker设置随服务启动而自启动</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable docker</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="————————————-docker状态"><a href="#————————————-docker状态" class="headerlink" title="#————————————-docker状态"></a>#————————————-docker状态</h4><h5 id="查看docker-运行状态"><a href="#查看docker-运行状态" class="headerlink" title="查看docker 运行状态"></a>查看docker 运行状态</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status docker</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="查看docker-版本号信息"><a href="#查看docker-版本号信息" class="headerlink" title="查看docker 版本号信息"></a>查看docker 版本号信息</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker version</span><br><span class="line">docker info</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="————————————-docker帮助"><a href="#————————————-docker帮助" class="headerlink" title="#————————————-docker帮助"></a>#————————————-docker帮助</h4><h5 id="忘记某些命令时，进行查看"><a href="#忘记某些命令时，进行查看" class="headerlink" title="忘记某些命令时，进行查看"></a>忘记某些命令时，进行查看</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker --help</span><br></pre></td></tr></table></figure></div>
+
+<p>#如果忘记了 run命令 不知道可以带哪些参数 可以这样使用</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --help</span><br></pre></td></tr></table></figure></div>
+
+<p>#————————————-镜像（增）</p>
+<h5 id="拉取镜像（增）"><a href="#拉取镜像（增）" class="headerlink" title="拉取镜像（增）"></a>拉取镜像（增）</h5><h5 id="不加tag-版本号-即拉取docker仓库中-该镜像的最新版本latest-加-tag-则是拉取指定版本"><a href="#不加tag-版本号-即拉取docker仓库中-该镜像的最新版本latest-加-tag-则是拉取指定版本" class="headerlink" title="不加tag(版本号) 即拉取docker仓库中 该镜像的最新版本latest 加:tag 则是拉取指定版本"></a>不加tag(版本号) 即拉取docker仓库中 该镜像的最新版本latest 加:tag 则是拉取指定版本</h5><h5 id="https-hub-docker-com-search-type-image-（去官网镜像搜索）"><a href="#https-hub-docker-com-search-type-image-（去官网镜像搜索）" class="headerlink" title="https://hub.docker.com/search?type=image （去官网镜像搜索）"></a><a class="link"   target="_blank" rel="noopener" href="https://hub.docker.com/search?type=image" >https://hub.docker.com/search?type=image<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> （去官网镜像搜索）</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull 镜像名 </span><br><span class="line">docker pull 镜像名:tag</span><br></pre></td></tr></table></figure></div>
+
+<p>#————————————-镜像（查）</p>
+<h5 id="查看镜像列表（查）"><a href="#查看镜像列表（查）" class="headerlink" title="查看镜像列表（查）"></a>查看镜像列表（查）</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure></div>
+
+
+
+
+<h5 id="搜索镜像（查）"><a href="#搜索镜像（查）" class="headerlink" title="搜索镜像（查）"></a>搜索镜像（查）</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker search 镜像名</span><br><span class="line">docker search --filter=STARS=9000 mysql 搜索 STARS &gt;9000的 mysql 镜像</span><br></pre></td></tr></table></figure></div>
+
+<p>#————————————-镜像（删）</p>
+<h5 id="删除镜像（删）"><a href="#删除镜像（删）" class="headerlink" title="删除镜像（删）"></a>删除镜像（删）</h5><h5 id="删除一个"><a href="#删除一个" class="headerlink" title="删除一个"></a>删除一个</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm -f 镜像名/镜像ID</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="删除多个-其镜像ID或镜像用用空格隔开即可"><a href="#删除多个-其镜像ID或镜像用用空格隔开即可" class="headerlink" title="删除多个 其镜像ID或镜像用用空格隔开即可"></a>删除多个 其镜像ID或镜像用用空格隔开即可</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm -f 镜像名/镜像ID 镜像名/镜像ID 镜像名/镜像ID</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="删除全部镜像-a-意思为显示全部-q-意思为只显示ID"><a href="#删除全部镜像-a-意思为显示全部-q-意思为只显示ID" class="headerlink" title="删除全部镜像  -a 意思为显示全部, -q 意思为只显示ID"></a>删除全部镜像  -a 意思为显示全部, -q 意思为只显示ID</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi -f $(docker images -aq)</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="强制删除镜像"><a href="#强制删除镜像" class="headerlink" title="强制删除镜像"></a>强制删除镜像</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image rm 镜像名称/镜像ID</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="删除未使用的资源，包括停止的容器、未使用的网络和构建缓存。这将提示你确认要删除的内容："><a href="#删除未使用的资源，包括停止的容器、未使用的网络和构建缓存。这将提示你确认要删除的内容：" class="headerlink" title="删除未使用的资源，包括停止的容器、未使用的网络和构建缓存。这将提示你确认要删除的内容："></a>删除未使用的资源，包括停止的容器、未使用的网络和构建缓存。这将提示你确认要删除的内容：</h5><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> docker system prune</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="————————————-镜像（存）"><a href="#————————————-镜像（存）" class="headerlink" title="#————————————-镜像（存）"></a>#————————————-镜像（存）</h5><h5 id="保存镜像（存）"><a href="#保存镜像（存）" class="headerlink" title="保存镜像（存）"></a>保存镜像（存）</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker save 镜像名/镜像ID -o 镜像保存在哪个位置与名字</span><br></pre></td></tr></table></figure></div>
+
+
+<h5 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker save tomcat -o /myimg.tar</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="加载镜像（增）"><a href="#加载镜像（增）" class="headerlink" title="加载镜像（增）"></a>加载镜像（增）</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker load -i 镜像保存文件位置</span><br></pre></td></tr></table></figure></div>
+
+
+<h5 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker load -i myimg.tar</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="查看所有容器列表（包含-正在运行-和-已停止的）"><a href="#查看所有容器列表（包含-正在运行-和-已停止的）" class="headerlink" title="查看所有容器列表（包含 正在运行 和 已停止的）"></a>查看所有容器列表（包含 正在运行 和 已停止的）</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="停止容器"><a href="#停止容器" class="headerlink" title="停止容器"></a>停止容器</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop 容器ID/容器名</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="重启容器"><a href="#重启容器" class="headerlink" title="重启容器"></a>重启容器</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker restart 容器ID/容器名</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker start 容器ID/容器名</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="kill-容器"><a href="#kill-容器" class="headerlink" title="kill 容器"></a>kill 容器</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker kill 容器ID/容器名</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="—————-容器文件拷贝-（无论容器是否开启-都可以进行拷贝）"><a href="#—————-容器文件拷贝-（无论容器是否开启-都可以进行拷贝）" class="headerlink" title="—————-容器文件拷贝 （无论容器是否开启 都可以进行拷贝）"></a>—————-容器文件拷贝 （无论容器是否开启 都可以进行拷贝）</h5><h5 id="docker-cp-容器ID-名称-文件路径-要拷贝到外部的路径-要拷贝到外部的路径-容器ID-名称-文件路径"><a href="#docker-cp-容器ID-名称-文件路径-要拷贝到外部的路径-要拷贝到外部的路径-容器ID-名称-文件路径" class="headerlink" title="docker cp 容器ID&#x2F;名称:文件路径  要拷贝到外部的路径 | 要拷贝到外部的路径  容器ID&#x2F;名称:文件路径"></a>docker cp 容器ID&#x2F;名称:文件路径  要拷贝到外部的路径 | 要拷贝到外部的路径  容器ID&#x2F;名称:文件路径</h5><h5 id="从容器内-拷出"><a href="#从容器内-拷出" class="headerlink" title="从容器内 拷出"></a>从容器内 拷出</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker cp 容器ID/名称: 容器内路径  容器外路径</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker cp nginx:/etc/nginx/conf.d /data/applications/nginx/conf/conf.d</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="从外部-拷贝文件到容器内"><a href="#从外部-拷贝文件到容器内" class="headerlink" title="从外部 拷贝文件到容器内"></a>从外部 拷贝文件到容器内</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker  cp 容器外路径 容器ID/名称: 容器内路径</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="—————-查看容器日志"><a href="#—————-查看容器日志" class="headerlink" title="—————-查看容器日志"></a>—————-查看容器日志</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs -f --tail=要查看末尾多少行 默认all 容器ID</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs -f -t --tail 1000 2ab447816a66</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="—————-更换容器名"><a href="#—————-更换容器名" class="headerlink" title="—————-更换容器名"></a>—————-更换容器名</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rename 容器ID/容器名 新容器名</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="运行一个容器"><a href="#运行一个容器" class="headerlink" title="运行一个容器"></a>运行一个容器</h5><h5 id="restart-always-该容器随docker服务启动而自动启动"><a href="#restart-always-该容器随docker服务启动而自动启动" class="headerlink" title="-restart&#x3D;always 该容器随docker服务启动而自动启动"></a>-restart&#x3D;always 该容器随docker服务启动而自动启动</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -d --name 要取的别名 镜像名:Tag /bin/bash </span><br></pre></td></tr></table></figure></div>
+
+<p>命令参数说明：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">-d：后台运行容器</span><br><span class="line"></span><br><span class="line">-p：端口映射，格式为主机端口:容器端口</span><br><span class="line"></span><br><span class="line">-e：设置环境变量，这里设置的是root密码</span><br><span class="line"></span><br><span class="line">--name：设置容器别名</span><br><span class="line"></span><br><span class="line">-v 挂载文件，格式为：宿主机绝对路径目录:容器内目录，</span><br><span class="line"></span><br><span class="line">比如我们使用：-v /usr/local/mysql/logs:/var/log/mysql</span><br><span class="line"></span><br><span class="line">将mysql容器存放日志文件的目录：/var/log/mysql挂载在宿主机的/usr/local/mysql/logs下</span><br></pre></td></tr></table></figure></div>
+
+
+<h5 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a>示例</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker run --name mysql \</span><br><span class="line">-v /myapp/mysql:/var/lib/mysql \</span><br><span class="line">-p 3306:3306 \</span><br><span class="line">-e MYSQL_ROOT_PASSWORD=123456 \</span><br><span class="line">-d mysql:8.0.19</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="停止运行的-redis-容器"><a href="#停止运行的-redis-容器" class="headerlink" title="停止运行的 redis 容器"></a>停止运行的 redis 容器</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop 容器名/容器ID</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="删除一个容器"><a href="#删除一个容器" class="headerlink" title="#删除一个容器"></a>#删除一个容器</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm -f 容器名/容器ID</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="删除多个容器-空格隔开要删除的容器名或容器ID"><a href="#删除多个容器-空格隔开要删除的容器名或容器ID" class="headerlink" title="#删除多个容器 空格隔开要删除的容器名或容器ID"></a>#删除多个容器 空格隔开要删除的容器名或容器ID</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm -f 容器名/容器ID 容器名/容器ID 容器名/容器ID</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="删除全部容器"><a href="#删除全部容器" class="headerlink" title="#删除全部容器"></a>#删除全部容器</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm -f $(docker ps -aq)</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="进入容器-方式一"><a href="#进入容器-方式一" class="headerlink" title="#进入容器(方式一)"></a>#进入容器(方式一)</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it 容器名/容器ID /bin/bash</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="进入容器-方式二-—-不推荐使用"><a href="#进入容器-方式二-—-不推荐使用" class="headerlink" title="#进入容器(方式二) — 不推荐使用"></a>#进入容器(方式二) — 不推荐使用</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker attach 容器名/容器ID</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="直接退出-（如果没有添加-d-参数-持久化运行容器-该容器会被关闭-）"><a href="#直接退出-（如果没有添加-d-参数-持久化运行容器-该容器会被关闭-）" class="headerlink" title="直接退出 （如果没有添加-d 参数(持久化运行容器) 该容器会被关闭 ）"></a>直接退出 （如果没有添加-d 参数(持久化运行容器) 该容器会被关闭 ）</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="优雅退出-（无论是否添加-d-参数-容器都不会被关闭）"><a href="#优雅退出-（无论是否添加-d-参数-容器都不会被关闭）" class="headerlink" title="优雅退出 （无论是否添加-d 参数 容器都不会被关闭）"></a>优雅退出 （无论是否添加-d 参数 容器都不会被关闭）</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl + p + q</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="——————————防火墙命令"><a href="#——————————防火墙命令" class="headerlink" title="#——————————防火墙命令"></a>#——————————防火墙命令</h4><h5 id="1-检验防火墙是否启动"><a href="#1-检验防火墙是否启动" class="headerlink" title="&#x2F;&#x2F; 1.检验防火墙是否启动"></a>&#x2F;&#x2F; 1.检验防火墙是否启动</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="2-检查端口是否启动："><a href="#2-检查端口是否启动：" class="headerlink" title="&#x2F;&#x2F; 2. 检查端口是否启动："></a>&#x2F;&#x2F; 2. 检查端口是否启动：</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --zone=public --list-ports</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="3-开启-8080-端口："><a href="#3-开启-8080-端口：" class="headerlink" title="&#x2F;&#x2F;3.开启 8080 端口："></a>&#x2F;&#x2F;3.开启 8080 端口：</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=8080/tcp --permanent</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="4-重新启动防火墙"><a href="#4-重新启动防火墙" class="headerlink" title="&#x2F;&#x2F;4.重新启动防火墙"></a>&#x2F;&#x2F;4.重新启动防火墙</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="永久关闭防火墙-和SElinux"><a href="#永久关闭防火墙-和SElinux" class="headerlink" title="#永久关闭防火墙,和SElinux"></a>#永久关闭防火墙,和SElinux</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl disable firewalld</span><br><span class="line"></span><br><span class="line">setenforce 0</span><br><span class="line">sed -i &#x27;s/^SELINUX=.*/SELINUX=disabled/g&#x27; /etc/selinux/config</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="构建一个新的镜像"><a href="#构建一个新的镜像" class="headerlink" title="构建一个新的镜像"></a>构建一个新的镜像</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker commit -m=&quot;提交信息&quot; -a=&quot;作者信息&quot; 容器名/容器ID 提交后的镜像名:Tag</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="查看docker磁盘占用总体情况"><a href="#查看docker磁盘占用总体情况" class="headerlink" title="查看docker磁盘占用总体情况"></a>查看docker磁盘占用总体情况</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">du -hs /var/lib/docker/ </span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="查看Docker的磁盘使用具体情况"><a href="#查看Docker的磁盘使用具体情况" class="headerlink" title="查看Docker的磁盘使用具体情况"></a>查看Docker的磁盘使用具体情况</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker system df</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="—————————-删除-无用的容器和-镜像"><a href="#—————————-删除-无用的容器和-镜像" class="headerlink" title="—————————-删除 无用的容器和 镜像"></a>—————————-删除 无用的容器和 镜像</h5><h5 id="删除异常停止的容器"><a href="#删除异常停止的容器" class="headerlink" title="删除异常停止的容器"></a>删除异常停止的容器</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm `docker ps -a | grep Exited | awk &#x27;&#123;print $1&#125;&#x27;` </span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="删除名称或标签为none的镜像"><a href="#删除名称或标签为none的镜像" class="headerlink" title="删除名称或标签为none的镜像"></a>删除名称或标签为none的镜像</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi -f  `docker images | grep &#x27;&lt;none&gt;&#x27; | awk &#x27;&#123;print $3&#125;&#x27;`</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="清除所有无容器使用的镜像-只要是镜像无容器使用（容器正常运行）都会被删除，包括容器临时停止"><a href="#清除所有无容器使用的镜像-只要是镜像无容器使用（容器正常运行）都会被删除，包括容器临时停止" class="headerlink" title="清除所有无容器使用的镜像 (只要是镜像无容器使用（容器正常运行）都会被删除，包括容器临时停止)"></a>清除所有无容器使用的镜像 (只要是镜像无容器使用（容器正常运行）都会被删除，包括容器临时停止)</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker system prune -a</span><br></pre></td></tr></table></figure></div>
+
+
+
+
+<h5 id="—————————-查找大文件"><a href="#—————————-查找大文件" class="headerlink" title="—————————-查找大文件"></a>—————————-查找大文件</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -type f -size +100M -print0 | xargs -0 du -h | sort -nr</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="查找指定docker使用目录下大于指定大小文件"><a href="#查找指定docker使用目录下大于指定大小文件" class="headerlink" title="查找指定docker使用目录下大于指定大小文件"></a>查找指定docker使用目录下大于指定大小文件</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -type f -size +100M -print0 | xargs -0 du -h | sort -nr |grep &#x27;/var/lib/docker/overlay2/*&#x27;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="构建镜像-（需要在Dockerfile同级目录下构建）"><a href="#构建镜像-（需要在Dockerfile同级目录下构建）" class="headerlink" title="构建镜像 （需要在Dockerfile同级目录下构建）"></a>构建镜像 （需要在Dockerfile同级目录下构建）</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t cat:1.0 .</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h5 id="说明（-t：设置-镜像的名字及tag）（最后的-为当前目录）"><a href="#说明（-t：设置-镜像的名字及tag）（最后的-为当前目录）" class="headerlink" title="说明（-t：设置 镜像的名字及tag）（最后的. 为当前目录）"></a>说明（-t：设置 镜像的名字及tag）（最后的. 为当前目录）</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FROM</span><br><span class="line">基础镜像，当前新镜像是基于哪个镜像的，指定一个已经存在的镜像作为模板，第一条必须是from</span><br><span class="line"></span><br><span class="line">MAINTAINER</span><br><span class="line">镜像维护者的姓名和邮箱地址</span><br></pre></td></tr></table></figure></div>
+
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RUN</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="容器构建时需要运行的命令"><a href="#容器构建时需要运行的命令" class="headerlink" title="容器构建时需要运行的命令"></a>容器构建时需要运行的命令</h5><p>两种格式</p>
+<p>shell格式（1）</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RUN yum -y install vim</span><br></pre></td></tr></table></figure></div>
+
+<p>exec格式（2）</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&quot;java&quot;,&quot;-Djava.security.egd=file:/dev/./urandom&quot;,&quot;-jar&quot;,&quot;/app.jar&quot;]</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="注意：RUN-是在-docker-build时运行"><a href="#注意：RUN-是在-docker-build时运行" class="headerlink" title="注意：RUN 是在 docker build时运行"></a>注意：RUN 是在 docker build时运行</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EXPOSE</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="当前容器对外暴露出的端口"><a href="#当前容器对外暴露出的端口" class="headerlink" title="当前容器对外暴露出的端口"></a>当前容器对外暴露出的端口</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WORKDIR</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="指定在创建容器后，终端默认登陆的进来工作目录，一个落脚点"><a href="#指定在创建容器后，终端默认登陆的进来工作目录，一个落脚点" class="headerlink" title="指定在创建容器后，终端默认登陆的进来工作目录，一个落脚点"></a>指定在创建容器后，终端默认登陆的进来工作目录，一个落脚点</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">USER</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="指定该镜像以什么样的用户去执行，如果都不指定，默认是root"><a href="#指定该镜像以什么样的用户去执行，如果都不指定，默认是root" class="headerlink" title="指定该镜像以什么样的用户去执行，如果都不指定，默认是root"></a>指定该镜像以什么样的用户去执行，如果都不指定，默认是root</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ENV</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="用来在构建镜像过程中设置环境变量"><a href="#用来在构建镜像过程中设置环境变量" class="headerlink" title="用来在构建镜像过程中设置环境变量"></a>用来在构建镜像过程中设置环境变量</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ENV MY_PATH /usr/mytest</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="这个环境变量可以在后续的任何RUN指令中使用，这就如同在命令前面指定了环境变量前缀一样；"><a href="#这个环境变量可以在后续的任何RUN指令中使用，这就如同在命令前面指定了环境变量前缀一样；" class="headerlink" title="这个环境变量可以在后续的任何RUN指令中使用，这就如同在命令前面指定了环境变量前缀一样；"></a>这个环境变量可以在后续的任何RUN指令中使用，这就如同在命令前面指定了环境变量前缀一样；</h5><h5 id="也可以在其它指令中直接使用这些环境变量，"><a href="#也可以在其它指令中直接使用这些环境变量，" class="headerlink" title="也可以在其它指令中直接使用这些环境变量，"></a>也可以在其它指令中直接使用这些环境变量，</h5><p>比如：</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WORKDIR $MY_PATH</span><br></pre></td></tr></table></figure></div>
+
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ADD</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="将宿主机目录下的文件拷贝进镜像且会自动处理URL和解压tar压缩包"><a href="#将宿主机目录下的文件拷贝进镜像且会自动处理URL和解压tar压缩包" class="headerlink" title="将宿主机目录下的文件拷贝进镜像且会自动处理URL和解压tar压缩包"></a>将宿主机目录下的文件拷贝进镜像且会自动处理URL和解压tar压缩包</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">COPY</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="类似ADD，拷贝文件和目录到镜像中。"><a href="#类似ADD，拷贝文件和目录到镜像中。" class="headerlink" title="类似ADD，拷贝文件和目录到镜像中。"></a>类似ADD，拷贝文件和目录到镜像中。</h5><h5 id="将从构建上下文目录中-的文件-目录复制到新的一层的镜像内的-位置"><a href="#将从构建上下文目录中-的文件-目录复制到新的一层的镜像内的-位置" class="headerlink" title="将从构建上下文目录中 &lt;源路径&gt; 的文件&#x2F;目录复制到新的一层的镜像内的 &lt;目标路径&gt; 位置"></a>将从构建上下文目录中 &lt;源路径&gt; 的文件&#x2F;目录复制到新的一层的镜像内的 &lt;目标路径&gt; 位置</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">COPY src dest</span><br><span class="line">COPY [&quot;src&quot;, &quot;dest&quot;]</span><br></pre></td></tr></table></figure></div>
+
+<p>&lt;src源路径&gt;：源文件或者源目录<br>&lt;dest目标路径&gt;：容器内的指定路径，该路径不用事先建好，路径不存在的话，会自动创建。</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VOLUME</span><br></pre></td></tr></table></figure></div>
+
+<h5 id="容器数据卷，用于数据保存和持久化工作"><a href="#容器数据卷，用于数据保存和持久化工作" class="headerlink" title="容器数据卷，用于数据保存和持久化工作"></a>容器数据卷，用于数据保存和持久化工作</h5><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CMD</span><br></pre></td></tr></table></figure></div>
+
+<p>指定容器启动后的要干的事情</p>
+<p>注意：Dockerfile 中可以有多个 CMD 指令，<br>但只有最后一个生效，CMD 会被 docker run 之后的参数替换</p>
+<p>Compose 是 Docker 公司推出的一个工具软件，可以管理多个 Docker 容器组成一个应用。你需要定义一个 YAML 格式的配置文件docker-compose.yml，写好多个容器之间的调用关系。然后，只要一个命令，就能同时启动&#x2F;关闭这些容器。</p>
+<p>简而言之：</p>
+<p>Docker-Compose是Docker官方的开源项目， 负责实现对Docker容器集群的快速编排。</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">docker-compose -h                           # 查看帮助</span><br><span class="line"></span><br><span class="line">docker-compose up                           # 启动所有docker-compose服务</span><br><span class="line">docker-compose up -d                        # 启动所有docker-compose服务并后台运行</span><br><span class="line"></span><br><span class="line">docker-compose down                         # 停止并删除容器、网络、卷、镜像</span><br><span class="line">docker-compose exec  yml里面的服务id         # 进入容器实例内部yml文件中写的服务id /bin/bash</span><br><span class="line"></span><br><span class="line">docker-compose ps                      # 展示当前docker-compose编排过的运行的所有容器</span><br><span class="line">docker-compose top                     # 展示当前docker-compose编排过的容器进程</span><br><span class="line"></span><br><span class="line">docker-compose logs  yml里面的服务id     # 查看容器输出日志</span><br><span class="line"></span><br><span class="line">docker-compose config     # 检查配置</span><br><span class="line">docker-compose config -q  # 检查配置，有问题才有输出</span><br><span class="line"></span><br><span class="line">docker-compose restart   # 重启服务</span><br><span class="line">docker-compose start     # 启动服务</span><br><span class="line">docker-compose stop      # 停止服务</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
 
 
 		</div>
@@ -443,7 +673,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-12-07 00:29:42
+                    :</strong> 2024-12-07 10:12:58
             </li>
         
         <li>
@@ -572,7 +802,7 @@
                     </span>
                     
                         <span>
-                            2k words in total
+                            4.3k words in total
                         </span>
                     
                 </p>
