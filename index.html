@@ -451,14 +451,18 @@
                 <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
                     <h3 class="home-article-title">
                         <a href="/2024/12/07/Untitled/">
-                            
+                            centos 9 部署本地gitlab
                         </a>
                     </h3>
 
                     <div class="home-article-content markdown-body">
                         
                             
-                            network:                     # 网络配置的根节点  version: 2                 # Netplan配置的版本号  renderer: networkd         # 指定使用systemd-networkd作为网络管理服务  ethernets:                 # 以太网接口的配置    eno1:       ...
+                            下载 Gitlab1mkdir /usr/local/gitlab
+
+进入创建的目录1cd /usr/local/gitlab
+
+下载 Gitlab 安装包，wget下载速度慢，可以手动下载再上传到目录下1wget --content-disposition https://packages.gitlab.com/gitlab/gitlab-ce/packages/el/8/gitlab-c...
                         
                     </div>
 
@@ -475,7 +479,7 @@
         
     </div>
 
-    <a href="/2024/12/07/Untitled/">Read more<span class="seo-reader-text"></span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2024/12/07/Untitled/">Read more<span class="seo-reader-text">centos 9 部署本地gitlab</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
                 </div>
@@ -734,7 +738,7 @@ Qu...
                     </span>
                     
                         <span>
-                            4.6k words in total
+                            4.5k words in total
                         </span>
                     
                 </p>
