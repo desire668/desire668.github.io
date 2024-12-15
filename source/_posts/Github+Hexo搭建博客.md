@@ -142,14 +142,46 @@ deploy:
 
 ![image-20241203012717242](C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20241203012717242.png)
 
- 
+####  如何将hexo源码也备份到github上，并且与博客互不冲突
 
- 
+##### 首先确保自己已经使用hexo在github搭建好了自己的个人博客
 
- 
+ 在Github的username.github.io仓库上新建一个xxx分支，并切换到该分支，并在该仓库->Settings->Branches->Default branch中将默认分支设为xxx，save保存；然后将该仓库克隆到本地，进入该username.github.io文件目录。
 
- 
+完成上面步骤后，在当前目录使用Git Bash执行`git branch`命令查看当前所在分支，应为新建的分支xxx：
 
- 
+先将本地博客的部署文件（**Hexo目录下的全部文件**）全部拷贝进username.github.io文件目录中去。
+
+接下来，进入username.github.io文件目录下，将该目录下的全部文件提交到xxx分支，提交之前需注意：
+
+> - 将themes目录以内中的主题的.git目录删除（如果有），因为一个git仓库中不能包含另一个git仓库，提交主题文件夹会失败。
+> - 可能有人会问，删除了themes目录中的.git不就不能`git pull`更新主题了吗，很简单，需要更新主题时在另一个地方`git clone`下来该主题的最新版本，然后将内容拷到当前主题目录即可
+
+#### 提交hexo分支
+
+执行
+
+```
+git add .
+
+git commit -m 'up hexo files
+
+git push
+```
+
+即可将博客的hexo部署环境提交到GitHub个人仓库的xxx分支。
+
+master分支和xxx分支各自保存着一个版本，master分支用于保存博客静态资源，提供博客页面供人访问；xxx分支用于备份博客部署文件，供自己维护更新，两者在一个GitHub仓库内互不冲突，完美！
+
+编辑、撰写文章或其他博客更新改动
+
+依次执行`git add .`、`git commit -m 'back up hexo files'`（引号内容可改）、`git push`指令，保证xxx分支版本最新
+
+执行`hexo d -g`指令（在此之前，有时可能需要执行`hexo clean`），完成后就会发现，最新改动已经更新到master分支了，两个分支互不干扰！
+
+
+参考链接：https://www.jianshu.com/p/0b1fccce74e0
+
+
 
  
