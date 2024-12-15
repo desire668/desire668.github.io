@@ -203,6 +203,9 @@ navbar:
     工具箱:
       path: https://www.423down.com
       icon: fa-solid fa-toolbox
+    镜像站点: 
+      path: https://desirenb.us.kg/
+      icon: fa-solid fa-cloud
     # Archives: 
     #   path: /archives 
     #   icon: fa-regular fa-archive # can be empty
