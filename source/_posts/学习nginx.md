@@ -328,10 +328,10 @@ http {
     keepalive_timeout  65;  #超时连接
 
 
-#虚拟主机
+#虚拟主机  
     server {
         listen       80;	#监听端口
-        server_name  localhost; #域名，主机名
+        server_name  localhost; #域名，主机名 一个server_name可以指定多个域名，完整匹配，通配符匹配，通配符结束匹配，正则匹配
 
 #location指的是某一段的uri
         location / {
@@ -349,3 +349,5 @@ http {
 
 }
 ```
+
+nginx是隧道式代理，受本身带宽限制，lvs是专业的负载均衡器（dr模型）
