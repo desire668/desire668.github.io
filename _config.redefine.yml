@@ -25,11 +25,11 @@ info:
 # Docs: https://redefine-docs.ohevan.com/basic/defaults
 defaults:
   # Favicon
-  favicon: fa-solid fa-gamepad
+  favicon: /images/game.png
   # Site logo
-  logo: fa-solid fa-gamepad
+  logo: /images/game.png
   # Site avatar
-  avatar: http://sofqghj9f.hn-bkt.clouddn.com/avatar.png?e=1735662493&token=rSzAUCvxF5D_QBB6hhWXVyL0eQIKpTXH861BaX2c:Y6EsCNjBXa_m_7WO5SVEe2fAqjs=
+  avatar: /images/avatar.png
 # IMAGE CONFIGURATION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
@@ -123,7 +123,7 @@ home_banner:
   style: fixed # static or fixed
   # Home banner image
   image: 
-    light: http://sofqghj9f.hn-bkt.clouddn.com/wallhaven-wqery6-light.webp?e=1735662374&token=rSzAUCvxF5D_QBB6hhWXVyL0eQIKpTXH861BaX2c:_nImp3gU4gjxOp9FCnGyrT4Yyn0= # light mode
+    light: /images/wallhaven-wqery6-light.webp # light mode
     dark: /images/wallhaven-wqery6-dark.webp # dark mode
   # Home banner title
   title: Desire的博客
