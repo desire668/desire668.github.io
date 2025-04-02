@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="desire">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2024/12/03/github+hexo搭建博客/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Github+Hexo搭建博客">
+<meta property="og:url" content="http://example.com/2024/12/03/Github+Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/redefine-og.webp">
+<meta property="article:published_time" content="2024-12-02T17:25:55.000Z">
+<meta property="article:modified_time" content="2025-03-26T13:00:31.692Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/redefine-og.webp">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="https://ooo.0x0.ooo/2025/04/02/O01Wot.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://ooo.0x0.ooo/2025/04/02/O01Wot.png">
+    <meta name="theme-color" content="#7bceca">
+    <link rel="shortcut icon" href="https://ooo.0x0.ooo/2025/04/02/O01Wot.png">
+    <!--- Page Info-->
+    
+    <title>
+        
+            Github+Hexo搭建博客 | Desire的博客
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+        <link href="" rel="stylesheet">
+    
+    
+        <link href="" rel="stylesheet">
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#7bceca","secondary":"#c6eae8","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":"enable","family":null,"url":null},"english":{"enable":"enable","family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"Hexo Theme Redefine, Redefine Your Hexo Journey."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"https://ooo.0x0.ooo/2025/04/02/O01brx.jpg","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Desire的博客","subtitle":{"text":["欢迎访问我的博客！"],"hitokoto":{"enable":true,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"default","links":{"github":"https://github.com/desire668","instagram":null,"zhihu":null,"twitter":null,"email":"2082216455@qq.com"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":true},"aplayer":{"enable":true,"type":"fixed","audios":[{"name":"Love me back","artist":"Coldlay","url":"http://music.163.com/song/media/outer/url?id=1341512162.mp3","cover":"http://p2.music.126.net/fLKkI3nDPDIFTcOdjk7MUQ==/109951163813131048.jpg","lrc":null},{"name":"Something Just Like This","artist":"Coldplay","url":"https://evan.beee.top/music/Something%20Just%20Like%20This%20-%20The%20Chainsmokers%E3%80%81Coldplay.mp3","cover":"https://evan.beee.top/music/covers/Something_Just_Like_This.png"}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":true,"color":{"left":"#78afc5","right":"#3e8dac","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"github":{"path":"https://github.com/desire668","icon":"fa-brands fa-github"},"工具箱":{"path":"https://www.423down.com","icon":"fa-solid fa-toolbox"},"导航站点":{"path":"https://www.desireblog.cn/","icon":"fa-solid fa-cloud"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+                <a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/">
+                    <img src="https://ooo.0x0.ooo/2025/04/02/O01Wot.png" class="w-full h-full rounded-sm">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                Desire的博客
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   target="_blank" rel="noopener" href="https://github.com/desire668"
+                                        >
+                                    <i class="fa-brands fa-github fa-fw"></i>
+                                    GITHUB
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   target="_blank" rel="noopener" href="https://www.423down.com"
+                                        >
+                                    <i class="fa-solid fa-toolbox fa-fw"></i>
+                                    工具箱
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   target="_blank" rel="noopener" href="https://www.desireblog.cn/"
+                                        >
+                                    <i class="fa-solid fa-cloud fa-fw"></i>
+                                    导航站点
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           target="_blank" rel="noopener" href="https://github.com/desire668"
+                        >
+                            <span>
+                                GITHUB
+                            </span>
+                            
+                                <i class="fa-brands fa-github fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           target="_blank" rel="noopener" href="https://www.423down.com"
+                        >
+                            <span>
+                                工具箱
+                            </span>
+                            
+                                <i class="fa-solid fa-toolbox fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           target="_blank" rel="noopener" href="https://www.desireblog.cn/"
+                        >
+                            <span>
+                                导航站点
+                            </span>
+                            
+                                <i class="fa-solid fa-cloud fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">10</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Github+Hexo搭建博客</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="https://ooo.0x0.ooo/2025/04/02/O01Wot.png">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">desire</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv2</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-12-03 01:25:55</span>
+        <span class="mobile">2024-12-03 01:25:55</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-03-26 21:31</span>
+            <span class="mobile">2025-03-26 21:31</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>1.3k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>5 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h3 id="1：创建github账号，并登陆"><a href="#1：创建github账号，并登陆" class="headerlink" title="1：创建github账号，并登陆"></a>1：创建github账号，并登陆</h3><h3 id="2：在你github主页左上角有个repositories，点击旁边的new，新建仓库"><a href="#2：在你github主页左上角有个repositories，点击旁边的new，新建仓库" class="headerlink" title="2：在你github主页左上角有个repositories，点击旁边的new，新建仓库"></a>2：在你github主页左上角有个repositories，点击旁边的new，新建仓库</h3><h3 id="3-填你的github用户名加github-io"><a href="#3-填你的github用户名加github-io" class="headerlink" title="3:填你的github用户名加github.io"></a>3:填你的github用户名加github.io</h3><h3 id="4：回到主页，进入新创建的库，点击setting"><a href="#4：回到主页，进入新创建的库，点击setting" class="headerlink" title="4：回到主页，进入新创建的库，点击setting"></a>4：回到主页，进入新创建的库，点击setting</h3><h3 id="5：点击pages再点击-github-pages，返回是个网页。"><a href="#5：点击pages再点击-github-pages，返回是个网页。" class="headerlink" title="5：点击pages再点击 github pages，返回是个网页。"></a>5：点击pages再点击 github pages，返回是个网页。</h3><h3 id="6：下载node-js安装-node-v-查看版本是否-安装。下载git安装，git-v-查看版本是否安装"><a href="#6：下载node-js安装-node-v-查看版本是否-安装。下载git安装，git-v-查看版本是否安装" class="headerlink" title="6：下载node.js安装  node -v 查看版本是否 安装。下载git安装，git -v 查看版本是否安装"></a>6：下载node.js安装  node -v 查看版本是否 安装。下载git安装，git -v 查看版本是否安装</h3><h3 id="7：新建一个文件夹，在空白处右键-open-git-bash-here-输入以下两行命令，双引号区域替换成你的github账户和邮箱"><a href="#7：新建一个文件夹，在空白处右键-open-git-bash-here-输入以下两行命令，双引号区域替换成你的github账户和邮箱" class="headerlink" title="7：新建一个文件夹，在空白处右键 open git bash here 输入以下两行命令，双引号区域替换成你的github账户和邮箱"></a>7：新建一个文件夹，在空白处右键 open git bash here 输入以下两行命令，双引号区域替换成你的github账户和邮箱</h3><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name&quot;desire668&quot;</span><br><span class="line"></span><br><span class="line">git config --global [user.emal&quot;2082216455@qq.com](mailto:user.emal\)</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="6-打开终端输入以下命令，安装hexo"><a href="#6-打开终端输入以下命令，安装hexo" class="headerlink" title="6:打开终端输入以下命令，安装hexo"></a>6:打开终端输入以下命令，安装hexo</h3><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="7：在创建的文件夹下，打开-git-bash-here-，输入以下命令"><a href="#7：在创建的文件夹下，打开-git-bash-here-，输入以下命令" class="headerlink" title="7：在创建的文件夹下，打开 git bash here ，输入以下命令"></a>7：在创建的文件夹下，打开 git bash here ，输入以下命令</h3><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo init myBlog     （ctrl+c退出）</span><br><span class="line"></span><br><span class="line">cd myBlog </span><br><span class="line"></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="7：若是上面的命令都没报错的话，就恭喜了，运行-hexo-s-命令，在浏览-器中输入-http-localhost-4000-回车就能够预览效果了"><a href="#7：若是上面的命令都没报错的话，就恭喜了，运行-hexo-s-命令，在浏览-器中输入-http-localhost-4000-回车就能够预览效果了" class="headerlink" title="7：若是上面的命令都没报错的话，就恭喜了，运行 hexo s 命令，在浏览 器中输入 http://localhost:4000 回车就能够预览效果了"></a>7：若是上面的命令都没报错的话，就恭喜了，运行 hexo s 命令，在浏览 器中输入 <a class="link"   target="_blank" rel="noopener" href="http://localhost:4000/" >http://localhost:4000<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> 回车就能够预览效果了</h3><h3 id="8：自行去官网上找自己喜欢的主题下载-https-hexo-io-themes"><a href="#8：自行去官网上找自己喜欢的主题下载-https-hexo-io-themes" class="headerlink" title="8：自行去官网上找自己喜欢的主题下载 https://hexo.io/themes"></a>8：自行去官网上找自己喜欢的主题下载 <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/themes" >https://hexo.io/themes<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></h3><h3 id="9：打开你创建的文件夹-myBlog-themes-在空白处右键-open-git-bash-here-运行你喜欢的主题的安装命令"><a href="#9：打开你创建的文件夹-myBlog-themes-在空白处右键-open-git-bash-here-运行你喜欢的主题的安装命令" class="headerlink" title="9：打开你创建的文件夹\myBlog\themes,在空白处右键 open git bash here ,运行你喜欢的主题的安装命令"></a>9：打开你创建的文件夹\myBlog\themes,在空白处右键 open git bash here ,运行你喜欢的主题的安装命令</h3><h3 id="10：-config-yml-文件中修改theme：（此为主题名）"><a href="#10：-config-yml-文件中修改theme：（此为主题名）" class="headerlink" title="10：_config.yml 文件中修改theme：（此为主题名）"></a>10：_config.yml 文件中修改theme：（此为主题名）</h3><h3 id="11：保存配置文件后，运行以下三条命令，重新生成静态文件并启动服务，在浏览器中输入http-localhost-4000回车就能够预览修改主题后的效果了"><a href="#11：保存配置文件后，运行以下三条命令，重新生成静态文件并启动服务，在浏览器中输入http-localhost-4000回车就能够预览修改主题后的效果了" class="headerlink" title="11：保存配置文件后，运行以下三条命令，重新生成静态文件并启动服务，在浏览器中输入http://localhost:4000回车就能够预览修改主题后的效果了"></a>11：保存配置文件后，运行以下三条命令，重新生成静态文件并启动服务，在浏览器中输入<a href="http://localhost:4000回车就能够预览修改主题后的效果了">http://localhost:4000回车就能够预览修改主题后的效果了</a></h3><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="12：主题具体怎么配置自己看说文档，接下来配置git，输入以下命令"><a href="#12：主题具体怎么配置自己看说文档，接下来配置git，输入以下命令" class="headerlink" title="12：主题具体怎么配置自己看说文档，接下来配置git，输入以下命令"></a>12：主题具体怎么配置自己看说文档，接下来配置git，输入以下命令</h3><h4 id="以下-user-name-和-user-email-输入自己的"><a href="#以下-user-name-和-user-email-输入自己的" class="headerlink" title="# 以下 user.name 和 user.email 输入自己的"></a># 以下 user.name 和 user.email 输入自己的</h4><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;这&quot;</span><br><span class="line"></span><br><span class="line">git config --global user.email 这</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="13：使用-ssh-keygen-生成私钥和公钥"><a href="#13：使用-ssh-keygen-生成私钥和公钥" class="headerlink" title="13：使用 ssh-keygen 生成私钥和公钥"></a>13：使用 ssh-keygen 生成私钥和公钥</h3><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="一路回车键，记住你的公钥-id-rsa-pub-的位置。"><a href="#一路回车键，记住你的公钥-id-rsa-pub-的位置。" class="headerlink" title="一路回车键，记住你的公钥 id_rsa.pub 的位置。"></a>一路回车键，记住你的公钥 id_rsa.pub 的位置。</h4><h3 id="14：接着在-GitHub-头像下的-Settings-里找到添加-SSH-key，点击New-SSH-key-。将刚刚生成的公钥-id-rsa-pub-文件里的内容复制到-Key-里面（用-记事本-打开公钥文件），然后选择添加，GitHub-会提示输入密码确认。"><a href="#14：接着在-GitHub-头像下的-Settings-里找到添加-SSH-key，点击New-SSH-key-。将刚刚生成的公钥-id-rsa-pub-文件里的内容复制到-Key-里面（用-记事本-打开公钥文件），然后选择添加，GitHub-会提示输入密码确认。" class="headerlink" title="14：接着在 GitHub 头像下的 Settings 里找到添加 SSH key，点击New SSH key 。将刚刚生成的公钥 id_rsa.pub 文件里的内容复制到 Key 里面（用 记事本 打开公钥文件），然后选择添加，GitHub 会提示输入密码确认。"></a>14：接着在 GitHub 头像下的 Settings 里找到添加 SSH key，点击New SSH key 。将刚刚生成的公钥 id_rsa.pub 文件里的内容复制到 Key 里面（用 记事本 打开公钥文件），然后选择添加，GitHub 会提示输入密码确认。</h3><h3 id="15：终端输入"><a href="#15：终端输入" class="headerlink" title="15：终端输入"></a>15：终端输入</h3><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T [git@github.com](mailto:git@github.com)</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="第一次的时候会让你-yes-确认-，如果看到-Hi-后面是自己的用户名，就说明成功了"><a href="#第一次的时候会让你-yes-确认-，如果看到-Hi-后面是自己的用户名，就说明成功了" class="headerlink" title="第一次的时候会让你 yes 确认 ，如果看到 Hi 后面是自己的用户名，就说明成功了"></a>第一次的时候会让你 yes 确认 ，如果看到 Hi 后面是自己的用户名，就说明成功了</h4><h3 id="16：回到项目文件夹，编辑hexo-的配置文件-config-yml最下面"><a href="#16：回到项目文件夹，编辑hexo-的配置文件-config-yml最下面" class="headerlink" title="16：回到项目文件夹，编辑hexo 的配置文件 _config.yml	最下面"></a>16：回到项目文件夹，编辑hexo 的配置文件 _config.yml	最下面</h3><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line"></span><br><span class="line"> type: git</span><br><span class="line"></span><br><span class="line"> repository: https://github.com/用户名/用户名.github.io.git</span><br><span class="line"></span><br><span class="line"> branch: main</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="17-安装-Git-插件"><a href="#17-安装-Git-插件" class="headerlink" title="17:安装 Git 插件"></a>17:安装 Git 插件</h3><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="18：部署"><a href="#18：部署" class="headerlink" title="18：部署"></a>18：部署</h3><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo c &amp;&amp; hexo g &amp;&amp; hexo d </span><br></pre></td></tr></table></figure></div>
+
+<h3 id="19-访问"><a href="#19-访问" class="headerlink" title="19:访问"></a>19:访问</h3><p>你的用户名.github.io</p>
+<h4 id="20-如何将hexo源码也备份到github上，并且与博客互不冲突"><a href="#20-如何将hexo源码也备份到github上，并且与博客互不冲突" class="headerlink" title="20:如何将hexo源码也备份到github上，并且与博客互不冲突"></a>20:如何将hexo源码也备份到github上，并且与博客互不冲突</h4><p> 在Github的username.github.io仓库上新建一个xxx分支，并切换到该分支，并在该仓库-&gt;Settings-&gt;Branches-&gt;Default branch中将默认分支设为xxx，save保存；然后将该仓库克隆到本地，进入该username.github.io文件目录。</p>
+<p>在当前目录使用Git Bash执行<code>git branch</code>命令查看当前所在分支，应为新建的分支xxx：</p>
+<p>先将本地博客的部署文件（<strong>Hexo目录下的全部文件</strong>）全部拷贝进username.github.io文件目录中去。</p>
+<p>接下来，进入username.github.io文件目录下，将该目录下的全部文件提交到xxx分支，提交之前需注意：</p>
+<blockquote>
+<ul>
+<li>将themes目录以内中的主题的.git目录删除（如果有），因为一个git仓库中不能包含另一个git仓库，提交主题文件夹会失败。</li>
+<li>可能有人会问，删除了themes目录中的.git不就不能<code>git pull</code>更新主题了吗，很简单，需要更新主题时在另一个地方<code>git clone</code>下来该主题的最新版本，然后将内容拷到当前主题目录即可</li>
+</ul>
+</blockquote>
+<h4 id="21-提交hexo分支"><a href="#21-提交hexo分支" class="headerlink" title="21:提交hexo分支"></a>21:提交hexo分支</h4><div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line"></span><br><span class="line">git commit -m &#x27;back up hexo files&#x27;       #引号内容可改</span><br><span class="line"></span><br><span class="line">git push 	#或者  git push git@github.com:desire668/desire668.github.io.git</span><br></pre></td></tr></table></figure></div>
+
+<p>即可将博客的hexo部署环境提交到GitHub个人仓库的xxx分支。</p>
+<p>master分支和xxx分支各自保存着一个版本，master分支用于保存博客静态资源，提供博客页面供人访问；xxx分支用于备份博客部署文件，供自己维护更新，两者在一个GitHub仓库内互不冲突，完美！</p>
+<p>编辑、撰写文章或其他博客更新改动</p>
+<p>依次执行，保证xxx分支版本最新</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line"></span><br><span class="line">git commit -m &#x27;back up hexo files&#x27;       #引号内容可改</span><br><span class="line"></span><br><span class="line">git push 	#或者  git push git@github.com:desire668/desire668.github.io.git</span><br></pre></td></tr></table></figure></div>
+
+<p>执行</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo c &amp;&amp; hexo g &amp;&amp; hexo d </span><br></pre></td></tr></table></figure></div>
+
+<p>完成后就会发现，最新改动已经更新到master分支了，两个分支互不干扰！</p>
+<h5 id="新电脑更新博客的话需要将新电脑的生成的ssh-key添加到GitHub账户上"><a href="#新电脑更新博客的话需要将新电脑的生成的ssh-key添加到GitHub账户上" class="headerlink" title="新电脑更新博客的话需要将新电脑的生成的ssh key添加到GitHub账户上"></a>新电脑更新博客的话需要将新电脑的生成的ssh key添加到GitHub账户上</h5><p>在新电脑上克隆username.github.io仓库的xxx分支到本地，此时本地git仓库处于xxx分支</p>
+<p>切换到username.github.io目录，执行</p>
+<div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo</span><br><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git</span><br></pre></td></tr></table></figure></div>
+
+<p>(由于仓库有一个.gitignore文件，里面默认是忽略掉  node_modules文件夹的，也就是说仓库的hexo分支并没有存储该目录[也不需要]，所以需要install下</p>
+<h6 id="参考链接：https-www-jianshu-com-p-0b1fccce74e0"><a href="#参考链接：https-www-jianshu-com-p-0b1fccce74e0" class="headerlink" title="参考链接：https://www.jianshu.com/p/0b1fccce74e0"></a>参考链接：<a class="link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/0b1fccce74e0" >https://www.jianshu.com/p/0b1fccce74e0<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></h6>
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> Github+Hexo搭建博客</li>
+        <li><strong>Author:</strong> desire</li>
+        <li><strong>Created at
+                :</strong> 2024-12-03 01:25:55</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2025-03-26 21:00:31
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://desire668.github.io/2024/12/03/Github+Hexo搭建博客/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2025/03/26/Dzzoffice+onlyoffice%EF%BC%8C%E4%BA%91Excel%EF%BC%8C%E4%BA%91Word%EF%BC%8C%E4%BA%91PPT/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">Dzzoffice+onlyoffice，云Excel，云Word，云PPT</span>
+						<span class="post-nav-item">Prev posts</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2024/12/02/Linux-forge%E6%A0%B8%E5%BF%83mc%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA1-20-1%E7%89%88%E6%9C%AC/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">Linux forge核心mc服务器搭建1.20.1版本</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          reaction: false,
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">Github+Hexo搭建博客</div>
+		<ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%EF%BC%9A%E5%88%9B%E5%BB%BAgithub%E8%B4%A6%E5%8F%B7%EF%BC%8C%E5%B9%B6%E7%99%BB%E9%99%86"><span class="nav-text">1：创建github账号，并登陆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%EF%BC%9A%E5%9C%A8%E4%BD%A0github%E4%B8%BB%E9%A1%B5%E5%B7%A6%E4%B8%8A%E8%A7%92%E6%9C%89%E4%B8%AArepositories%EF%BC%8C%E7%82%B9%E5%87%BB%E6%97%81%E8%BE%B9%E7%9A%84new%EF%BC%8C%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="nav-text">2：在你github主页左上角有个repositories，点击旁边的new，新建仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%A1%AB%E4%BD%A0%E7%9A%84github%E7%94%A8%E6%88%B7%E5%90%8D%E5%8A%A0github-io"><span class="nav-text">3:填你的github用户名加github.io</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%EF%BC%9A%E5%9B%9E%E5%88%B0%E4%B8%BB%E9%A1%B5%EF%BC%8C%E8%BF%9B%E5%85%A5%E6%96%B0%E5%88%9B%E5%BB%BA%E7%9A%84%E5%BA%93%EF%BC%8C%E7%82%B9%E5%87%BBsetting"><span class="nav-text">4：回到主页，进入新创建的库，点击setting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5%EF%BC%9A%E7%82%B9%E5%87%BBpages%E5%86%8D%E7%82%B9%E5%87%BB-github-pages%EF%BC%8C%E8%BF%94%E5%9B%9E%E6%98%AF%E4%B8%AA%E7%BD%91%E9%A1%B5%E3%80%82"><span class="nav-text">5：点击pages再点击 github pages，返回是个网页。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6%EF%BC%9A%E4%B8%8B%E8%BD%BDnode-js%E5%AE%89%E8%A3%85-node-v-%E6%9F%A5%E7%9C%8B%E7%89%88%E6%9C%AC%E6%98%AF%E5%90%A6-%E5%AE%89%E8%A3%85%E3%80%82%E4%B8%8B%E8%BD%BDgit%E5%AE%89%E8%A3%85%EF%BC%8Cgit-v-%E6%9F%A5%E7%9C%8B%E7%89%88%E6%9C%AC%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85"><span class="nav-text">6：下载node.js安装  node -v 查看版本是否 安装。下载git安装，git -v 查看版本是否安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7%EF%BC%9A%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%8C%E5%9C%A8%E7%A9%BA%E7%99%BD%E5%A4%84%E5%8F%B3%E9%94%AE-open-git-bash-here-%E8%BE%93%E5%85%A5%E4%BB%A5%E4%B8%8B%E4%B8%A4%E8%A1%8C%E5%91%BD%E4%BB%A4%EF%BC%8C%E5%8F%8C%E5%BC%95%E5%8F%B7%E5%8C%BA%E5%9F%9F%E6%9B%BF%E6%8D%A2%E6%88%90%E4%BD%A0%E7%9A%84github%E8%B4%A6%E6%88%B7%E5%92%8C%E9%82%AE%E7%AE%B1"><span class="nav-text">7：新建一个文件夹，在空白处右键 open git bash here 输入以下两行命令，双引号区域替换成你的github账户和邮箱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF%E8%BE%93%E5%85%A5%E4%BB%A5%E4%B8%8B%E5%91%BD%E4%BB%A4%EF%BC%8C%E5%AE%89%E8%A3%85hexo"><span class="nav-text">6:打开终端输入以下命令，安装hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7%EF%BC%9A%E5%9C%A8%E5%88%9B%E5%BB%BA%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%EF%BC%8C%E6%89%93%E5%BC%80-git-bash-here-%EF%BC%8C%E8%BE%93%E5%85%A5%E4%BB%A5%E4%B8%8B%E5%91%BD%E4%BB%A4"><span class="nav-text">7：在创建的文件夹下，打开 git bash here ，输入以下命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7%EF%BC%9A%E8%8B%A5%E6%98%AF%E4%B8%8A%E9%9D%A2%E7%9A%84%E5%91%BD%E4%BB%A4%E9%83%BD%E6%B2%A1%E6%8A%A5%E9%94%99%E7%9A%84%E8%AF%9D%EF%BC%8C%E5%B0%B1%E6%81%AD%E5%96%9C%E4%BA%86%EF%BC%8C%E8%BF%90%E8%A1%8C-hexo-s-%E5%91%BD%E4%BB%A4%EF%BC%8C%E5%9C%A8%E6%B5%8F%E8%A7%88-%E5%99%A8%E4%B8%AD%E8%BE%93%E5%85%A5-http-localhost-4000-%E5%9B%9E%E8%BD%A6%E5%B0%B1%E8%83%BD%E5%A4%9F%E9%A2%84%E8%A7%88%E6%95%88%E6%9E%9C%E4%BA%86"><span class="nav-text">7：若是上面的命令都没报错的话，就恭喜了，运行 hexo s 命令，在浏览 器中输入 http:&#x2F;&#x2F;localhost:4000 回车就能够预览效果了</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8%EF%BC%9A%E8%87%AA%E8%A1%8C%E5%8E%BB%E5%AE%98%E7%BD%91%E4%B8%8A%E6%89%BE%E8%87%AA%E5%B7%B1%E5%96%9C%E6%AC%A2%E7%9A%84%E4%B8%BB%E9%A2%98%E4%B8%8B%E8%BD%BD-https-hexo-io-themes"><span class="nav-text">8：自行去官网上找自己喜欢的主题下载 https:&#x2F;&#x2F;hexo.io&#x2F;themes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9%EF%BC%9A%E6%89%93%E5%BC%80%E4%BD%A0%E5%88%9B%E5%BB%BA%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9-myBlog-themes-%E5%9C%A8%E7%A9%BA%E7%99%BD%E5%A4%84%E5%8F%B3%E9%94%AE-open-git-bash-here-%E8%BF%90%E8%A1%8C%E4%BD%A0%E5%96%9C%E6%AC%A2%E7%9A%84%E4%B8%BB%E9%A2%98%E7%9A%84%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4"><span class="nav-text">9：打开你创建的文件夹\myBlog\themes,在空白处右键 open git bash here ,运行你喜欢的主题的安装命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10%EF%BC%9A-config-yml-%E6%96%87%E4%BB%B6%E4%B8%AD%E4%BF%AE%E6%94%B9theme%EF%BC%9A%EF%BC%88%E6%AD%A4%E4%B8%BA%E4%B8%BB%E9%A2%98%E5%90%8D%EF%BC%89"><span class="nav-text">10：_config.yml 文件中修改theme：（此为主题名）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11%EF%BC%9A%E4%BF%9D%E5%AD%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%90%8E%EF%BC%8C%E8%BF%90%E8%A1%8C%E4%BB%A5%E4%B8%8B%E4%B8%89%E6%9D%A1%E5%91%BD%E4%BB%A4%EF%BC%8C%E9%87%8D%E6%96%B0%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6%E5%B9%B6%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%EF%BC%8C%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E8%BE%93%E5%85%A5http-localhost-4000%E5%9B%9E%E8%BD%A6%E5%B0%B1%E8%83%BD%E5%A4%9F%E9%A2%84%E8%A7%88%E4%BF%AE%E6%94%B9%E4%B8%BB%E9%A2%98%E5%90%8E%E7%9A%84%E6%95%88%E6%9E%9C%E4%BA%86"><span class="nav-text">11：保存配置文件后，运行以下三条命令，重新生成静态文件并启动服务，在浏览器中输入http:&#x2F;&#x2F;localhost:4000回车就能够预览修改主题后的效果了</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12%EF%BC%9A%E4%B8%BB%E9%A2%98%E5%85%B7%E4%BD%93%E6%80%8E%E4%B9%88%E9%85%8D%E7%BD%AE%E8%87%AA%E5%B7%B1%E7%9C%8B%E8%AF%B4%E6%96%87%E6%A1%A3%EF%BC%8C%E6%8E%A5%E4%B8%8B%E6%9D%A5%E9%85%8D%E7%BD%AEgit%EF%BC%8C%E8%BE%93%E5%85%A5%E4%BB%A5%E4%B8%8B%E5%91%BD%E4%BB%A4"><span class="nav-text">12：主题具体怎么配置自己看说文档，接下来配置git，输入以下命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13%EF%BC%9A%E4%BD%BF%E7%94%A8-ssh-keygen-%E7%94%9F%E6%88%90%E7%A7%81%E9%92%A5%E5%92%8C%E5%85%AC%E9%92%A5"><span class="nav-text">13：使用 ssh-keygen 生成私钥和公钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14%EF%BC%9A%E6%8E%A5%E7%9D%80%E5%9C%A8-GitHub-%E5%A4%B4%E5%83%8F%E4%B8%8B%E7%9A%84-Settings-%E9%87%8C%E6%89%BE%E5%88%B0%E6%B7%BB%E5%8A%A0-SSH-key%EF%BC%8C%E7%82%B9%E5%87%BBNew-SSH-key-%E3%80%82%E5%B0%86%E5%88%9A%E5%88%9A%E7%94%9F%E6%88%90%E7%9A%84%E5%85%AC%E9%92%A5-id-rsa-pub-%E6%96%87%E4%BB%B6%E9%87%8C%E7%9A%84%E5%86%85%E5%AE%B9%E5%A4%8D%E5%88%B6%E5%88%B0-Key-%E9%87%8C%E9%9D%A2%EF%BC%88%E7%94%A8-%E8%AE%B0%E4%BA%8B%E6%9C%AC-%E6%89%93%E5%BC%80%E5%85%AC%E9%92%A5%E6%96%87%E4%BB%B6%EF%BC%89%EF%BC%8C%E7%84%B6%E5%90%8E%E9%80%89%E6%8B%A9%E6%B7%BB%E5%8A%A0%EF%BC%8CGitHub-%E4%BC%9A%E6%8F%90%E7%A4%BA%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81%E7%A1%AE%E8%AE%A4%E3%80%82"><span class="nav-text">14：接着在 GitHub 头像下的 Settings 里找到添加 SSH key，点击New SSH key 。将刚刚生成的公钥 id_rsa.pub 文件里的内容复制到 Key 里面（用 记事本 打开公钥文件），然后选择添加，GitHub 会提示输入密码确认。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15%EF%BC%9A%E7%BB%88%E7%AB%AF%E8%BE%93%E5%85%A5"><span class="nav-text">15：终端输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16%EF%BC%9A%E5%9B%9E%E5%88%B0%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%8C%E7%BC%96%E8%BE%91hexo-%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-config-yml%E6%9C%80%E4%B8%8B%E9%9D%A2"><span class="nav-text">16：回到项目文件夹，编辑hexo 的配置文件 _config.yml	最下面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17-%E5%AE%89%E8%A3%85-Git-%E6%8F%92%E4%BB%B6"><span class="nav-text">17:安装 Git 插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18%EF%BC%9A%E9%83%A8%E7%BD%B2"><span class="nav-text">18：部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19-%E8%AE%BF%E9%97%AE"><span class="nav-text">19:访问</span></a></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">desire</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        10 posts in total
+                    </span>
+                    
+                        <span>
+                            8.1k words in total
+                        </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/build/utils.js" type="module"></script>
+
+<script src="/js/build/main.js" type="module"></script>
+
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/runtime.js"></script>
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+  
+<script src="/js/build/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+    
+<script src="/js/build/libs/anime.min.js"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
+	<div id="aplayer"></div>
+
+<script src="/js/build/libs/APlayer.min.js"></script>
+
+
+<script src="/js/build/plugins/aplayer.js"></script>
+
+
+	
+</body>
+
+</html>
